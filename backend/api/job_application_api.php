@@ -1,7 +1,6 @@
 <?php
 
 header("Content-Type: application/json");
-
 include '../config/database.php';
 include '../controllers/JobApplicationController.php';
 

@@ -1,6 +1,15 @@
 <?php 
 include 'link.php';
+include '../backend/models/User.php';
 
+session_start();
+
+if (!isset($_SESSION['user_name'])) {
+    header("Location: ../index.php");
+    exit;
+}
+
+$user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
 ?>
 
 <header id="page-topbar">
@@ -25,7 +34,7 @@ include 'link.php';
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user" src="./image/user.png" alt="User">
-                    <span class="d-none d-xl-inline-block ms-1">Test</span>
+                    <span class="d-none d-xl-inline-block ms-1"><?= htmlspecialchars($user_name) ?></span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">

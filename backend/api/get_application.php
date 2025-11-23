@@ -1,6 +1,5 @@
 <?php 
 require_once '../controllers/JobApplicationController.php';
-
 header('Content-Type: application/json');
 
 if(isset($_GET['id'])) {

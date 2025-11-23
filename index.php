@@ -1,10 +1,21 @@
+<?php 
+
+session_start();
+if (isset($_SESSION['user_name'])) {
+    header("Location: view/dashboard.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Job Tracking - Login</title>
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
 </head>
 
 <body class="min-h-screen bg-stone-200 flex items-center justify-center p-4">
@@ -26,6 +37,7 @@
       </div>
 
       <!-- Form -->
+
       <div class="px-8 py-8 space-y-6">
 
         <!-- Email -->
@@ -43,10 +55,10 @@
             <input
               id="email"
               type="email"
-              placeholder="you@example.com"
+              name="email"
+              placeholder="johndoe@gmail.com"
               class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
-              required
-            />
+              required />
           </div>
         </div>
 
@@ -65,17 +77,16 @@
             <input
               id="password"
               type="password"
+              name="password"
               placeholder="Enter your password"
               class="block w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500"
-              required
-            />
+              required />
 
             <!-- Toggle Visibility -->
             <button
               id="togglePassword"
               type="button"
-              class="absolute inset-y-0 right-0 pr-3 flex items-center"
-            >
+              class="absolute inset-y-0 right-0 pr-3 flex items-center">
               <svg id="eyeIcon" class="h-5 w-5 text-gray-400 hover:text-gray-600" fill="none"
                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -97,23 +108,55 @@
         <!-- Submit -->
         <button
           id="submitBtn"
-          class="w-full bg-blue-500 text-white py-3 rounded-lg hover:from-indigo-700 hover:to-purple-700 shadow-lg"
-        >
+          class="w-full bg-blue-500 text-white py-3 rounded-lg hover:from-indigo-700 hover:to-purple-700 shadow-lg">
           Sign In
         </button>
       </div>
     </div>
   </div>
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script>
     const submitBtn = document.getElementById("submitBtn");
 
     submitBtn.addEventListener("click", () => {
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
-      const remember = document.getElementById("remember").checked;
 
-      console.log("Login attempted:", { email, password, remember });
+      if (email === "" || password === "") {
+        Swal.fire(
+          'Validation Error',
+          'Both email and password are required!',
+          'warning'
+        );
+        return;
+      }
+
+      $.ajax({
+        url: "backend/api/login_user.php",
+        type: "POST",
+        data: {
+          email: email,
+          password: password
+        },
+        dataType: "json",
+        success: function(res) {
+          if (res.status === "success") {
+            Swal.fire({
+              title: "Login Successful",
+              text: res.message,
+              icon: "success",
+              confirmButtonText: "Continue"
+            }).then(() => {
+              window.location.href = "view/dashboard.php";
+            });
+          }
+        },
+        error: function() {
+          alert("An error occurred. Please try again.");
+        }
+      });
+
     });
 
     document.getElementById("togglePassword").addEventListener("click", () => {
@@ -125,4 +168,5 @@
     });
   </script>
 </body>
+
 </html>
