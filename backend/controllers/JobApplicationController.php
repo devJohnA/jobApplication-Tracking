@@ -28,4 +28,8 @@ class JobApplicationController {
     public function updateApplication($data) {
         return $this->model->update($data);
     }
+
+    public function deleteApplication($id) {
+        return $this->model->delete($id);
+    }
 }

@@ -53,7 +53,7 @@
                                                     <td><a href="https://example.com" target="_blank"><?php echo htmlspecialchars($application['link']); ?></a></td>
                                                     <td>
                                                         <button class="btn btn-sm btn-info edit-application" data-application-id="<?= $application['id']; ?>">Edit</button>
-                                                        <button class="btn btn-sm btn-danger">Delete</button>
+                                                        <button class="btn btn-sm btn-danger delete-application" data-application-id="<?= $application['id']; ?>">Delete</button>
                                                     </td>
                                                 </tr>
                                             <?php endforeach; ?>
@@ -72,6 +72,48 @@
         <script>
             $(document).ready(function() {
                 $('#datatable').DataTable();
+
+                $(document).on('click', '.delete-application', function() {
+                    var id = $(this).data('application-id');
+
+                    Swal.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, delete it!'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            $.ajax({
+                                type: "POST",
+                                url: "../backend/api/delete_application.php",
+                                data: {
+                                    id: id
+                                },
+                                dataType: "json",
+                                success: function(response) {
+                                    if (response.status === "success") {
+                                        Swal.fire(
+                                            'Deleted!',
+                                            response.message,
+                                            'success'
+                                        ).then(() => {
+                                            location.reload();
+                                        });
+                                    } else {
+                                        Swal.fire(
+                                            'Error!',
+                                            response.message,
+                                            'error'
+                                        );
+                                    }
+                                }
+                            });
+                        }
+                    });
+                });
             });
         </script>
 

@@ -68,4 +68,11 @@ class JobApplication {
         ]);
         
     }
+
+    public function delete($id) {
+        $sql = "DELETE FROM job_applications WHERE id = :id";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':id' => $id]);
+        return $stmt->rowCount();   
+    }
 }
