@@ -537,22 +537,22 @@ body[data-layout=horizontal] .footer {
 }
 
 .mm-active {
-  color: #0f9cf3 !important;
+  color: #080808 !important;
 }
 .mm-active > a {
-  color: #0f9cf3 !important;
+  color: #080808 !important;
 }
 .mm-active > a i {
-  color: #0f9cf3 !important;
+  color: #080808 !important;
 }
 .mm-active > i {
-  color: #0f9cf3 !important;
+  color: #080808 !important;
 }
 .mm-active .active {
-  color: #0f9cf3 !important;
+  color: #080808 !important;
 }
 .mm-active .active i {
-  color: #0f9cf3 !important;
+  color: #080808 !important;
 }
 
 @media (max-width: 992px) {
