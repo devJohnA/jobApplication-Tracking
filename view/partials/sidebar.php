@@ -5,7 +5,7 @@
                 <li class="menu-title">Menu</li>
 
                 <li>
-                    <a href="./dashboard.php" class="waves-effect">
+                    <a href="./dashboard.php" class="waves-effect" style="font-weight: 200; color:black;">
                         <i class="ri-dashboard-line"></i>
                         <span>Dashboard</span>
                     </a>
@@ -13,7 +13,7 @@
 
 
 
-                <li><a href="./jobapplication.php" class="waves-effect"><i class="ri-service-line"></i><span>Job Applications</span></a></li>
+                <li><a href="./jobapplication.php" class="waves-effect" style="font-weight: 200; color:black;"><i class="ri-service-line" ></i><span>Job Applications</span></a></li>
 
 
 
