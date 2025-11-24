@@ -52,7 +52,7 @@ $userData = $userModel->getUserByEmail($userName);
                             <div class="card-body text-center p-5">
                                 <img src="image/cellphieffix.png" class="rounded-circle mb-4" style="width: 150px; height: 150px; object-fit: cover;">
                                 <div class="name-container">
-                                    <p class="text-center mb-0"><?php echo htmlspecialchars($userData['user_name']); ?></p>
+                                    <p class="text-center mb-0"><?php echo htmlspecialchars($userData['email']); ?></p>
                                     <i class="ri-edit-line edit-icon" id="toggleUpdateForm"></i>
                                 </div>
                                 <div class="d-flex justify-content-center align-items-center mb-3">
