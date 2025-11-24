@@ -40,8 +40,8 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
                 <div class="dropdown-menu dropdown-menu-end">
                     <a class="dropdown-item" href="#"><i class="ri-user-line align-middle me-1"></i> Profile</a>
                     <div class="dropdown-divider"></div>
-          
-                        <a class="dropdown-item text-danger" href="./logout.php"><i class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
+                        <a class="dropdown-item text-danger" href="partials/logout.php" id="logout"><i class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
+                 
                 </div>
             </div>
         </div>
