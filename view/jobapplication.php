@@ -30,7 +30,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-body ">
-                                    <button type="button" class="btn btn-primary waves-effect waves-light mb-3" data-bs-toggle="modal" data-bs-target="#Application">Add New Applications</button>
+                                    <button type="button" class="btn btn-dark waves-effect waves-light mb-3" data-bs-toggle="modal" data-bs-target="#Application">Add New Applications</button>
 
                                     <table id="datatable" class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                         <thead>

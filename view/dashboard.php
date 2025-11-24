@@ -10,7 +10,8 @@ $totaljobapplications = $controller->countApplications();
 
 <style>
     .gradient-card-one {
-        background: dodgerblue;
+        background: black;
+        border-radius: 10%;
     }
 </style>
 <div class="main-content">
