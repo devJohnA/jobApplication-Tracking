@@ -1,5 +1,4 @@
 <?php
-
 include_once __DIR__ . '/../models/User.php';
 
 class UserController {

@@ -36,7 +36,10 @@ class User {
             ':password' => password_hash($data['password'], PASSWORD_BCRYPT),
             ':id' => $data['id']
         ]);
+
+    return $stmt->rowCount();
     }
+    
     public function getUserByEmail($email) {
 
         $sql = "SELECT * FROM users WHERE email = :email";

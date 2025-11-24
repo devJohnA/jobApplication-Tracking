@@ -74,9 +74,8 @@ $userData = $userModel->getUserByEmail($userName);
 
                                 <!-- Update Form (Hidden Initially) -->
                                 <div id="updateProfileForm" class="mt-4 profile-form" style="display: none;">
-                                    <form action="../backend/update_profile.php" method="POST">
-                                        <input type="hidden" name="user_name" value="<?php echo $userId; ?>">
-                                        
+                                    <form action="../backend/api/update_profile.php" method="POST">
+                                      <input type="hidden" name="id" value="<?= $userData['id'] ?>">
                                         <div class="mb-3">
                                             <label for="email" class="form-label">Email</label>
                                             <input type="email" class="form-control" name="email" value="<?php echo htmlspecialchars($userData['email']); ?>" required>
