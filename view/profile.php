@@ -83,12 +83,12 @@ $userData = $userModel->getUserByEmail($userName);
 
                                         <div class="mb-3">
                                             <label for="password" class="form-label">New Password</label>
-                                            <input type="password" class="form-control" name="password">
+                                            <input type="password" class="form-control" name="password" required>
                                         </div>
 
                                         <div class="mb-3">
                                             <label for="confirm_password" class="form-label">Confirm Password</label>
-                                            <input type="password" class="form-control" name="confirm_password">
+                                            <input type="password" class="form-control" name="confirm_password" required>
                                         </div>
 
                                         <button type="submit" class="btn btn-warning">Save Changes</button>
