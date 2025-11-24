@@ -37,5 +37,11 @@ class User {
             ':id' => $data['id']
         ]);
     }
+    public function getUserByEmail($email) {
 
+        $sql = "SELECT * FROM users WHERE email = :email";
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([':email' => $email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

@@ -38,7 +38,7 @@ $user_name = isset($_SESSION['user_name']) ? $_SESSION['user_name'] : 'User';
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href="#"><i class="ri-user-line align-middle me-1"></i> Profile</a>
+                    <a class="dropdown-item" href="./profile.php"><i class="ri-user-line align-middle me-1"></i> Profile</a>
                     <div class="dropdown-divider"></div>
                         <a class="dropdown-item text-danger" href="partials/logout.php" id="logout"><i class="ri-shut-down-line align-middle me-1 text-danger"></i> Logout</a>
                  

@@ -16,4 +16,8 @@ class UserController {
     public function updateUser($data) {
         return $this->model->update($data);
     }
+
+    public function getUserByEmail($email) {
+        return $this->model->getUserByEmail($email);
+    }
 }
