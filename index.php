@@ -26,7 +26,7 @@ if (isset($_SESSION['user_name'])) {
       <div class="bg-gradient-to-r bg-slate-800 px-8 py-10 text-center">
         <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
           <!-- Lock Icon -->
-          <svg class="w-8 h-8 text-sky-500" fill="none" stroke="currentColor" stroke-width="2"
+          <svg class="w-8 h-8 text-slate-700" fill="none" stroke="currentColor" stroke-width="2"
             viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2zM8 11V7a4 4 0 1 1 8 0v4" />
