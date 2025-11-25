@@ -23,7 +23,7 @@ if (isset($_SESSION['user_name'])) {
     <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
 
       <!-- Header -->
-      <div class="bg-gradient-to-r from-sky-500 to-blue-500 px-8 py-10 text-center">
+      <div class="bg-gradient-to-r bg-slate-800 px-8 py-10 text-center">
         <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
           <!-- Lock Icon -->
           <svg class="w-8 h-8 text-sky-500" fill="none" stroke="currentColor" stroke-width="2"
@@ -99,16 +99,16 @@ if (isset($_SESSION['user_name'])) {
           </div>
 
 
-          <div class="flex justify-end">
+          <!-- <div class="flex justify-end">
             <button class="text-sm font-medium text-blue-500 hover:text-indigo-500">
               Forgot password?
             </button>
-          </div>
+          </div> -->
 
           <!-- Submit -->
           <button type="submit"
 
-            class="w-full bg-blue-500 text-white py-3 rounded-lg hover:from-indigo-700 hover:to-purple-700 shadow-lg">
+            class="w-full bg-slate-800 text-white py-3 rounded-lg hover:from-indigo-700 hover:to-purple-700 shadow-lg">
             Sign In
           </button>
         </div>
